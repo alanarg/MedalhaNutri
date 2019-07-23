@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MedalhaNutri</title>
+    <link rel="manifest" href="app.manifest">
+
+    <link rel="stylesheet" type="text/css" href="css/medalha.css">
+
+
+      <style>
+      body{
+          background-image: url('img/alimentos.jpg');
+      }
+
+      </style>
+  </head>
+  <body>
+
+    <div class="container" align="center">
+      <div class="row">
+        <div class="col-sm-12">
+        <h1>RELATE SEU CONSUMO</h1>
+        <img src="img/boca.jpg" width="10%"></img>
+      </div>
+      <div class="col-sm-6">
+
+        <form class="pesquisa" method="POST">
+          <p>Procure pelo alimento</p>
+          <input type="search" id="texto" align="center" list="historico"></input>
+          <input  type="button" name="aliment" value="enviar"  class="button" onclick="escolhaAlimento();" ></input>
+          <datalist id="historico">
+            <option value="Feijão"></option>
+            <option value="Arroz"></option>
+            <option value="Carne Vermelha"></option>
+            <option value="Frango"></option>
+            <option value="Batata doce"></option>
+            <option value="Mandioca "></option>
+          </datalist>
+          Alimento:  <p id="alimento"></p>
+        </div>
+          <div class="col-sm-6">
+          <p>Modo de preparo</p>
+          <input type="search" id="texto1" align="center" list="historico1" ></input>
+          <input type="button" name="modo" value="enviar" class="button" onclick="escolhaModo();"></input>
+          <datalist id="historico1">
+            <option value="Frito"></option>
+            <option value="cozido"></option>
+            <option value="Assado"></option>
+            <option value="Líquido"></option>
+
+          </datalist>
+          Modo de preparo: <p id="modo" name="modo"></p>
+
+        </div>
+
+          <script>
+
+            function escolhaAlimento(){
+              var a = document.getElementById("texto").value
+              const alimento = document.getElementById('alimento');
+              alimento.innerHTML = a;
+            }
+            function escolhaModo(){
+              var a = document.getElementById("texto1").value
+              const alimento = document.getElementById('modo');
+              alimento.innerHTML = a;
+            }
+            </script>
+
+
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+        <br><br><br><br>
+        <div class="container" align="center">
+          <div class="row">
+
+            <form align="left" method="POST">
+            <div class="col-sm-12" align="center">
+              <p><i>MEDIDAS CASEIRAS</i></p>
+            </div>
+            <div class="col-sm-4" align="center">
+
+
+              <img src="img/colher.jpg" class="imagem2" ></img>
+              <p id="exemplo"></p>
+              <p>Numero colheres:</p>
+              <br><br>
+              <input type="button" name="colher" value="+" class="button" onclick="colherMais();"></input>
+              <input class="button" type="button" name="colher" value="-" onclick="colherMenos();" ></input>
+
+              <br><br>
+            </div>
+            <div class="col-sm-4" align="center">
+              <img class="imagem2" src="img/copo.jpg"></img>
+              <p id="exemplo2"></p>
+              <p>Número de copos/chícaras:</p>
+              <br><br>
+
+
+              <input type="button" name="copo" value="+" class="button" onclick="copoMais();"></input>
+              <input type="button" name="copo" value="-" class="button" onclick="copoMenos();" ></input>
+
+              <br><br>
+            </div>
+            <div class="col-sm-4" align="center" >
+              <img class="imagem2" src="img/concha.jpg"></img>
+              <p id="exemplo3"></p>
+              <p>Número de conchas:</p>
+              <br><br>
+
+              <input type="button" name="concha" class="button" value="+" onclick="conchaMais();"></input>
+              <input type="button" name="concha" value="-" class="button" onclick="conchaMenos();" ></input>
+
+              <br><br>
+
+            </div>
+
+            </form>
+
+            <script>
+            var n1= 0;var n2=0; var n3=0;
+              function colherMais(){
+                const exemplo = document.getElementById('exemplo');
+                n1 =n1+1;
+                exemplo.innerHTML = n1;
+              }
+              function colherMenos(){
+                const exemplo = document.getElementById('exemplo');
+                n1 =n1-1;
+                exemplo.innerHTML = n1;
+
+
+
+              }
+              function copoMais(){
+                const exemplo2 = document.getElementById('exemplo2')
+                n2 = n2+1;
+                exemplo2.innerHTML = n2;
+              }
+              function copoMenos(){
+                const exemplo2 = document.getElementById('exemplo2')
+                n2 = n2-1;
+                exemplo2.innerHTML = n2;
+              }
+              function conchaMais(){
+                const exemplo3 = document.getElementById('exemplo3');
+                n3 = n3+1;
+                exemplo3.innerHTML= n3;
+              }
+              function conchaMenos(){
+                const exemplo3 = document.getElementById('exemplo3');
+                n3 = n3-1;
+                exemplo3.innerHTML = n3;
+              }
+
+            </script>
+            <input type="button"  class="button" value="Adicionar Alimento" onclick="registrarAlimento();"></input>
+
+
+            </div>
+
+
+          </div>
+          <br><br><br><br>
+          <div class="container" align="center">
+            <div class="row">
+              <div class="col-sm-12" align="center"></div>
+              <table class='table'  method="POST">
+                  <thead >
+                      <tr>
+                          <th>Alimento</th>
+                          <th>Modo</th>
+                          <th>Porção</th>
+                          <th>Data e hora</th>
+
+
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+
+                      <script>
+                        function registrarAlimento() {
+                          var linha = document.createElement("tr");
+                          var campo_alimento = document.createElement("td");
+                          var campo_modo = document.createElement("td");
+                          var campo_porcao = document.createElement("td");
+                          var campo_hora = document.createElement("td");
+
+                          var alimento = document.getElementById('texto').value
+                          var modo = document.getElementById('texto1').value
+                          var porcao = document.getElementById('exemplo').value
+                          var d = new Date();
+                          var hora = d;
+
+                          var texto_alimento = document.createTextNode(alimento)
+                          var texto_modo = document.createTextNode(modo)
+                          var texto_porcao = document.createTextNode(porcao)
+                          var texto_d = document.createTextNode(d)
+                          campo_alimento.appendChild(texto_alimento);
+                          campo_modo.appendChild(texto_modo);
+                          campo_porcao.appendChild(texto_porcao);
+                          campo_hora.appendChild(texto_d);
+
+                          linha.appendChild(campo_alimento);
+                          linha.appendChild(campo_modo);
+                          linha.appendChild(campo_porcao);
+                          linha.appendChild(campo_hora);
+
+                          var corpo_tabela = document.querySelector ("tbody");
+                          corpo_tabela.appendChild(linha);
+
+
+                        }
+
+
+
+
+                      </script>
+
+
+                 </table>
+
+
+
+
+              </div>
+            </div>
+
+    </div>
+    <br>
+  <body>
+</html>

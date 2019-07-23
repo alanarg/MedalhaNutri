@@ -1,0 +1,89 @@
+
+h1,h2{
+  font-family: "Comic Sans MS", cursive, arial;
+  font-size: 50px;
+  letter-spacing: -2.2px;
+  word-spacing: 2.4px;
+  color: #20C744;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: none;
+
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  width: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+p{
+  font-family: "Comic Sans MS", cursive, arial;
+  font-size: 20px;
+  color: #20C744;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: none;
+
+}
+.container{
+  position:relative;
+  height: 500px;
+  margin: 0 auto;
+  width: 1000px;
+  background-color: #FCFAFA;
+  border-radius: 30px;
+  border: #F3ED45 3px solid;
+
+}
+.imagem{
+  width: 30%;
+  border-radius: 15%;
+  border: #F3ED45 3px solid;
+  box-shadow: 0 0 10px;
+
+
+}
+.imagem:hover {
+  transform:scale(1.1) rotate(-5deg);
+}
+.imagem2{
+  width: 50%;
+  border-radius: 15%;
+  border: #F3ED45 1.5px solid;
+  box-shadow: 0 0 5px;
+
+
+}
+.imagem2:hover {
+  transform:scale(0,5.0,5) rotate(-360deg);
+}
+.pesquisa{
+  width: 200px;
+  height: 20px;
+  margin: 100px auto;
+}
+#texto{
+  width: 350px;
+  height: 30px;
+  float: left;
+  font-family: 'Arial';
+  font-size: 20px;
+}
+.btn{
+  width: 150px;
+  height: 150px;
+  padding-left:5px;
+  cursor:pointer;
+}
+#texto:focus{
+  border: solid 2px #2f4550;
+}
